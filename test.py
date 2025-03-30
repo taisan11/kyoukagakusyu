@@ -32,7 +32,9 @@ class TextGenerationEnv:
         
         return self._get_state(), reward, done
     
+    # ここでスコアを計算する（仮の実装）
     def _evaluate_sentence(self):
+        nowtext = "".join(self.current_text)
         return random.uniform(0, 1)  # 仮のスコア（後で改善）
 
 
