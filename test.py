@@ -34,8 +34,19 @@ class TextGenerationEnv:
     
     # ここでスコアを計算する（仮の実装）
     def _evaluate_sentence(self):
-        nowtext = "".join(self.current_text)
-        return random.uniform(0, 1)  # 仮のスコア（後で改善）
+        if self.current_text == []:
+            return 0
+        elif self.current_text == ["こんにちは", "世界"]:
+            return 0.5
+        elif self.current_text == ["私は", "AI", "です"]:
+            return 1
+        elif self.current_text == ["素晴らしい", "天気", "ですね"]:
+            return 1
+        elif self.current_text == ["私は", "AI"]:
+            return 0.5
+        # return random.uniform(0, 1)  # 仮のスコア（後で改善）
+        else:
+            return 0
 
 
 # 単語リスト
